@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מפענח הבעיות | פתרונות חכמים</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+</head>
+<body>
+    <main id="app">
+        <section id="state-1" class="card">
+            <h1>מפענח הבעיות</h1>
+            <p>תאר את הבעיה שאתה חווה, ואעזור לך למצוא פתרון הנדסי ובטוח.</p>
+            <textarea id="problem-input" placeholder="למשל: המכשיר החשמלי במטבח מקצר כל פעם שאני מפעיל אותו..." rows="4" aria-label="תיאור הבעיה"></textarea>
+            <button id="start-btn">נתח בעיה</button>
+        </section>
+
+        <section id="state-2" class="card hidden">
+            <div id="chat-history" aria-live="polite"></div>
+            <input type="text" id="answer-input" placeholder="הקלד תשובה..." aria-label="תשובה לשאלה">
+            <div class="controls">
+                <button id="submit-answer">שלח</button>
+                <button id="stop-btn" class="secondary">יש מספיק מידע</button>
+            </div>
+        </section>
+
+        <section id="state-3" class="card hidden">
+            <div id="solution-container">
+                <div class="hologram-container">
+                    <div class="hologram-object">
+                        <svg viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="50" r="40" fill="none" stroke="#00F2FE" stroke-width="2"/></svg>
+                    </div>
+                </div>
+                <h2 id="sol-title"></h2>
+                <p id="sol-desc"></p>
+                <div id="sol-steps"></div>
+            </div>
+            <button id="download-btn">הורד כ-PDF</button>
+        </section>
+    </main>
+    <footer>המידע אינו נשמר בשרת ואינו יוצא מהדפדפן שלך. הערה: פתרונות אלו מבוססים על אלגוריתם לוגי מוגדר מראש. לבעיות בטיחותיות קריטיות, יש להיוועץ באיש מקצוע מוסמך.</footer>
+    <script src="script.js"></script>
+</body>
+</html>
